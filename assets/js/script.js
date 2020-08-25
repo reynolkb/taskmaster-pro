@@ -272,8 +272,14 @@ $("#remove-tasks").on("click", function () {
 // load tasks for the first time
 loadTasks();
 
-setInterval(function () {
+/* setInterval(function () {
   $(".card .list-group-item").each(function (el) {
     auditTask(el);
   });
-}, (1000 * 60) * 30);
+}, (1000 * 60) * 30); */
+
+setInterval(function () {
+  $(".list-group-item").each(function (i, el) {
+    auditTask(el);
+  });
+}, 2000);
